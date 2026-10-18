@@ -3,7 +3,6 @@
 > **把说不清的领域，拆成可推导的规则。**
 > *Turning vague, intuition-based domains into derivable, reproducible, checkable rules.*
 
-
 ---
 
 ## English summary
