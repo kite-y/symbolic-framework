@@ -44,6 +44,9 @@ Tarot is **the first domain implemented**, not the point of the method.
 | `docs/02_塔罗分支/02_塔罗体系.md` | **The method applied to tarot** — reversals, colour pairs, the 6-row table. |
 | `docs/01_通用框架/方法论流程图.html` | Interactive — the five steps, seven tiers, three states. |
 | `docs/02_塔罗分支/塔罗推理链.html` | Interactive — how one card becomes one paragraph. |
+| `docs/02_塔罗分支/双牌互动.html` | Interactive — how two cards are actually paired, and why the result is **bidirectional**. |
+| `docs/02_塔罗分支/歧点与瑕点.html` | Interactive — **gather** (a whole that flows one way out) vs **scatter** (fragments that flow one way in). |
+| `docs/体系架构图.html` | Interactive overview — general spine · tarot branch · output, and how they connect. |
 
 **Status (honest scope):** the generic engine + the example domain layer are complete and runnable. The **full domain dictionaries**, the 78-card generated data, and the spread-level pipeline are **not** in this repository.
 
@@ -75,6 +78,8 @@ Contact: **GitHub [@kite-y](https://github.com/kite-y)** — questions and corre
 
 > 一句话：**通用本体是"方法"，塔罗分支是"方法的一本字典"**。仓库带方法 + 一个玩具字典；塔罗那本字典只写了规则，没给数据。
 
+> 塔罗这一支**是怎么想出来的**（起点、十五个卡点、被否决的思路），写在 [Releases](https://github.com/kite-y/symbolic-framework/releases) 里 —— 注意那是**塔罗分支的思考**，不是通用框架的。
+
 ---
 
 ## 核心设计：引擎与领域分离 ★
@@ -102,7 +107,7 @@ Contact: **GitHub [@kite-y](https://github.com/kite-y)** — questions and corre
 └──────────────────────────────────────────────┘
 ```
 
-### 自己验证（不用信我）
+### 自己验证
 
 ```bash
 # 1) 引擎源码里有没有【具体符号名】？（预期：零命中）
@@ -117,9 +122,9 @@ cd demo && python demo_daily.py
 
 第 3 条跑出来的就是 [`demo/output.txt`](demo/output.txt) 里的内容——**那里面没有一个塔罗词**。
 
-### ✅ 已知残留（已收窄 —— 我主动写出来，因为你能查到）
+### 已知的命名残留
 
-第 1 条命令零命中。下面这条**曾经也会命中**，现在范围已经缩到只剩命名：
+第 1 条命令零命中。下面这一类**曾经也会命中**，现在范围已经缩到只剩命名：
 
 ```bash
 # 4) 引擎里还剩哪些塔罗遗留？（预期：只剩命名层面的）
@@ -174,7 +179,7 @@ demo 会依次展示五件事：
 
 ## 四个设计取舍
 
-这四条是我**主动做的克制**，也是这套方法与"凭感觉的解读"最本质的区别：
+这四条是**刻意做的克制**，也是这套方法与"凭感觉的解读"最本质的区别：
 
 | # | 取舍 | 为什么 |
 |---|---|---|
@@ -200,7 +205,8 @@ demo 会依次展示五件事：
 │   ├── demo_daily.py          非塔罗领域的 demo
 │   └── output.txt             实际运行输出
 └── docs/
-      ├── README.md                  docs 索引：本体 / 分支
+      ├── README.md                  docs 索引：通用 / 塔罗 / 跨层
+      ├── 体系架构图.html/.png        跨层全景：三块怎么接（动态）
       ├── 01_通用框架/
       │   ├── 01_象征物体系.md        通用本体（对外版）
       │   ├── 引擎分层说明.md          引擎 / 领域两层
@@ -208,7 +214,9 @@ demo 会依次展示五件事：
       │   └── 架构图.png              引擎分层图
       └── 02_塔罗分支/
           ├── 02_塔罗体系.md         塔罗分支（只有规则）
-          └── 塔罗推理链.html/.png    塔罗那一支可视化
+          ├── 塔罗推理链.html/.png    一张牌 / 多张牌怎么说
+          ├── 双牌互动.html/.png      两张牌怎么对上（动态）
+          └── 歧点与瑕点.html/.png    合与散（动态）
 ```
 
 ---
@@ -231,7 +239,7 @@ demo 会依次展示五件事：
 
 - 本方法描述的是**结构与关系**，不是"必定发生的未来"
 - 锚点、属性这些定义来自作者判断（**是"偏见"，不是客观真理**）。写下来是因为：**只要规则一致，推导就是可复现的**
-- **分层还不彻底**：层结构名称（背景 / 中景 / 前景 / 空间层）与 `card_id` 仍是引擎里的领域遗留 → 见[已知残留](#-已知残留我主动写出来因为你能查到)
+- **分层还不彻底**：层结构名称（背景 / 中景 / 前景 / 空间层）与 `card_id` 仍是引擎里的领域遗留 → 见[已知的命名残留](#已知的命名残留)
 
 ---
 
