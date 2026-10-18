@@ -47,7 +47,7 @@ Tarot is **the first domain implemented**, not the point of the method.
 
 **Status (honest scope):** the generic engine + the example domain layer are complete and runnable. The **full domain dictionaries**, the 78-card generated data, and the spread-level pipeline are **not** in this repository.
 
-Contact: **GitHub [@kite-y](https://github.com/kite-y)** — Issues are closed; reach out via the profile.
+Contact: **GitHub [@kite-y](https://github.com/kite-y)** — questions and corrections welcome via [Issues](https://github.com/kite-y/symbolic-system/issues).
 
 ---
 
@@ -243,4 +243,4 @@ demo 会依次展示五件事：
 
 **GitHub：[@kite-y](https://github.com/kite-y)**
 
-> 本仓库**不开放 Issues**。有具体需要请邮件联系。
+> 有问题或指正，欢迎开 [Issue](https://github.com/kite-y/symbolic-system/issues)。
